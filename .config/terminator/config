@@ -1,0 +1,21 @@
+[global_config]
+  title_transmit_bg_color = "#da13ca"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.89
+    background_image = None
+    background_type = transparent
+    cursor_color = "#fef928"
+    font = Ubuntu Mono 12
+    scrollback_infinite = True
+    use_system_font = False
