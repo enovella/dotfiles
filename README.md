@@ -1,1 +1,5 @@
 # dotfiles
+
+* .bashrc
+
+* .gitconfig
