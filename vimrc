@@ -237,6 +237,15 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+" CTRL-A is Select all
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+
 "command codify source $VIMRUNTIME/syntax/c.vim
 autocmd BufWritePre * %s/\s\+$//e  " automagically trim whitespaces when saving files
 
