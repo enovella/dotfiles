@@ -46,6 +46,9 @@ set incsearch	" Incremental search
 set autowrite	" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
+set clipboard+=unnamed  " use the clipboards of vim and win
+set paste               " Paste from a windows or from vim
+set go+=a               " Visual selection automatically copied to the clipboard
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -94,9 +97,9 @@ set softtabstop=4       "number of spaces in tab when editing
 set showmatch           " highlight matching [{()}]
 
 
-set title                   " Show the filename in the window title bar
-set report=0                " Show all changes
-set showmode                " Show the current mode
+set title               " Show the filename in the window title bar
+set report=0            " Show all changes
+set showmode            " Show the current mode
 
 """ Searching
 set incsearch           " search as characters are entered
@@ -113,5 +116,11 @@ set history=999             " Increase history (default = 20)
 set undolevels=999          " Moar undo (default=100)
 set autoread                " reload files if changed externally
 
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 "command codify source $VIMRUNTIME/syntax/c.vim
