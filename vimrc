@@ -61,12 +61,11 @@ endif
 set cursorline   "Highlight the line currently under cursor.
 set number       "Show line niumbers on the sidebar.
 set showcmd      "Show command in bottom bar
-"set relativenumber "Show line number on the current line and relative numbers on all other lines.
 set visualbell   "Use visual bell instead of beeping when doing something wrong
 set ruler        "Always show cursor position
 set laststatus=2 "Always display the status bar
 
-" use relative line number by default
+"set relativenumber "Show line number on the current line and relative numbers on all other lines.
 " if exists('+relativenumber')
 "   set relativenumber
 "   endif
