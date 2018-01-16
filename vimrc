@@ -61,8 +61,8 @@ endif
 set cursorline   "Highlight the line currently under cursor.
 highlight  CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
 highlight CursorLine  cterm=NONE ctermbg=darkred ctermfg=white
-
 set cursorcolumn
+
 set number       "Show line niumbers on the sidebar.
 set showcmd      "Show command in bottom bar
 set visualbell   "Use visual bell instead of beeping when doing something wrong
