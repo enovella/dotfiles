@@ -1,3 +1,4 @@
+
 # =============================================================== #
 #
 # PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
@@ -170,7 +171,7 @@ fi
 
 function _exit()              # Function to run upon exit of shell.
 {
-    echo -e "${BRed}Hasta la vista, baby${NC}"
+    echo -e "${BRed}See you later :)${NC}"
 }
 trap _exit EXIT
 
@@ -338,9 +339,9 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 # Personnal Aliases
 #-------------------
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm' #-i'
+alias cp='cp' #-i'
+alias mv='mv' #-i'
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
 
@@ -353,8 +354,8 @@ alias ..='cd ..'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
-
-alias du='du -kh'    # Makes a more readable output.
+alias duu='du -Pxhs'      # Summarize size of folders very quick and precise
+alias du='du -kh'         # Makes a more readable output.
 alias df='df -kTh'
 
 #-------------------------------------------------------------
@@ -374,6 +375,19 @@ alias lm='ll |more'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=always'
+alias fgrep='fgrep --color=always'
+alias egrep='egrep --color=always'
+
+alias diff='colordiff'
+alias cczea="ccze -A"
+
+alias cd..="cd .."
+
+#alias search-pdfs=searchpdfs() { find . -name '*.pdf' -exec sh -c 'pdftotext "{}" - | egrep --with-filename --label="{}" --color '$1 }
 
 
 #-------------------------------------------------------------
@@ -523,6 +537,7 @@ function extract()      # Handy Extract Program
             *.zip)       unzip $1        ;;
             *.Z)         uncompress $1   ;;
             *.7z)        7z x $1         ;;
+            *.apk)       unzip $1        ;;
             *)           echo "'$1' cannot be extracted via >extract<" ;;
         esac
     else
@@ -921,3 +936,4 @@ complete -F _killall killall killps
 # mode:shell-script
 # sh-shell:bash
 # End:
+
