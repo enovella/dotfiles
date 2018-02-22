@@ -368,6 +368,9 @@ alias lk='ls -lSr'         #  Sort by size, biggest last.
 alias lt='ls -ltr'         #  Sort by date, most recent last.
 alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+alias ll='ls -l'
+alias la='ls -A'
+alias llh='ls -lh'
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias ll="ls -lv --group-directories-first"
@@ -388,6 +391,8 @@ alias cczea="ccze -A"
 alias cd..="cd .."
 
 #alias search-pdfs=searchpdfs() { find . -name '*.pdf' -exec sh -c 'pdftotext "{}" - | egrep --with-filename --label="{}" --color '$1 }
+alias mkdird='mkdir $(date +%Y%m%d)'
+alias teed='tee $(date +%Y%m%d-%s).log'
 
 
 #-------------------------------------------------------------
@@ -537,7 +542,7 @@ function extract()      # Handy Extract Program
             *.zip)       unzip $1        ;;
             *.Z)         uncompress $1   ;;
             *.7z)        7z x $1         ;;
-            *.apk)       unzip $1        ;;
+            *.apk)       unzip $1 -d $1.unpack ;;
             *)           echo "'$1' cannot be extracted via >extract<" ;;
         esac
     else
