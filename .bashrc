@@ -162,7 +162,7 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 
 
-echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
+echo -e "${BCyan}BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
 - DISPLAY on ${BRed}$DISPLAY${NC}\n"
 date
 if [ -x /usr/games/fortune ]; then
@@ -297,16 +297,21 @@ function job_color()
 # Now we construct the prompt.
 PROMPT_COMMAND="history -a"
 case ${TERM} in
-  *term | rxvt | linux)
+  *term* | rxvt | linux)
         PS1="\[\$(load_color)\][\A\[${NC}\] "
+
         # Time of day (with load info):
         PS1="\[\$(load_color)\][\A\[${NC}\] "
+
         # User@Host (with connection type info):
         PS1=${PS1}"\[${SU}\]\u\[${NC}\]@\[${CNX}\]\h\[${NC}\] "
+
         # PWD (with 'disk space' info):
         PS1=${PS1}"\[\$(disk_color)\]\W]\[${NC}\] "
+
         # Prompt (with 'job' info):
         PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
+
         # Set title of current xterm:
         PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
         ;;
@@ -398,14 +403,13 @@ alias teed='tee $(date +%Y%m%d-%s).log'
 #-------------------------------------------------------------
 # Tailoring 'less'
 #-------------------------------------------------------------
-
-alias more='less'
-export PAGER=less
-export LESSCHARSET='latin1'
-export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
+#alias more='less'
+#export PAGER=less
+#export LESSCHARSET='latin1'
+#export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
                 # Use this if lesspipe.sh exists.
-export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
-:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+#export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
+#:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -420,7 +424,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
 #-------------------------------------------------------------
-
 alias xs='cd'
 alias vf='cd'
 alias moer='more'
