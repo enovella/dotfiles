@@ -38,14 +38,14 @@ endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-set showcmd		" Show (partial) command in status line.
-set showmatch	" Show matching brackets.
-set ignorecase	" Do case insensitive matching
-set smartcase	" Do smart case matching
-set incsearch	" Incremental search
-set autowrite	" Automatically save before commands like :next and :make
-set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+set showcmd		        " Show (partial) command in status line.
+set showmatch	        " Show matching brackets.
+set ignorecase	        " Do case insensitive matching
+set smartcase	        " Do smart case matching
+set incsearch	        " Incremental search
+set autowrite	        " Automatically save before commands like :next and :make
+set hidden		        " Hide buffers when they are abandoned
+set mouse=a		        " Enable mouse usage (all modes)
 set clipboard+=unnamed  " use the clipboards of vim and win
 set paste               " Paste from a windows or from vim
 set go+=a               " Visual selection automatically copied to the clipboard
@@ -59,15 +59,15 @@ endif
 " User Interface Options
 """
 set cursorline   "Highlight the line currently under cursor.
-highlight  CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
-highlight CursorLine  cterm=NONE ctermbg=darkred ctermfg=white
+highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+highlight CursorLine cterm=NONE ctermbg=darkgreen ctermfg=white
 set cursorcolumn
 
-set number       "Show line niumbers on the sidebar.
-set showcmd      "Show command in bottom bar
-set visualbell   "Use visual bell instead of beeping when doing something wrong
-set ruler        "Always show cursor position
-set laststatus=2 "Always display the status bar
+set number              " Show line niumbers on the sidebar.
+set showcmd             " Show command in bottom bar
+set visualbell          " Use visual bell instead of beeping when doing something wrong
+set ruler               " Always show cursor position
+set laststatus=2        " Always display the status bar
 
 "set relativenumber "Show line number on the current line and relative numbers on all other lines.
 " if exists('+relativenumber')
@@ -76,25 +76,25 @@ set laststatus=2 "Always display the status bar
 
 
 " Text rendering
-set display+=lastline " Always try to show a paragraph’s last line.
-set encoding=utf-8    " Use an encoding that supports unicode.
-set linebreak         " Avoid wrapping a line in the middle of a word.
-set scrolloff=1       " The number of screen lines to keep above and below the cursor.
-set sidescrolloff=5   " The number of screen columns to keep to the left and right of the cursor.
-set wrap              " Enable line wrapping.
+set display+=lastline   " Always try to show a paragraph’s last line.
+set encoding=utf-8      " Use an encoding that supports unicode.
+set linebreak           " Avoid wrapping a line in the middle of a word.
+set scrolloff=1         " The number of screen lines to keep above and below the cursor.
+set sidescrolloff=5     " The number of screen columns to keep to the left and right of the cursor.
+set wrap                " Enable line wrapping.
 
 " Performance Options
-set complete-=i   " Limit the files searched for auto-completes.
-set lazyredraw    " Dont update screen during macro and script execution.
+set complete-=i         " Limit the files searched for auto-completes.
+set lazyredraw          " Dont update screen during macro and script execution.
 
 " Indention options
-set autoindent          "New lines inherit the indentation of previous lines.
-set expandtab           "Convert tabs to spaces.
-set shiftround          "When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
-set shiftwidth=4        "When shifting, indent using four spaces.
-set smarttab            "Insert “tabstop” number of spaces when the “tab” key is pressed.
-set tabstop=4           "Indent using four spaces.
-set softtabstop=4       "number of spaces in tab when editing
+set autoindent          " New lines inherit the indentation of previous lines.
+set expandtab           " Convert tabs to spaces.
+set shiftround          " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+set shiftwidth=4        " When shifting, indent using four spaces.
+set smarttab            " Insert “tabstop” number of spaces when the “tab” key is pressed.
+set tabstop=4           " Indent using four spaces.
+set softtabstop=4       " number of spaces in tab when editing
 
 " Coding-wise
 set showmatch           " highlight matching [{()}]
@@ -111,13 +111,13 @@ set gdefault            " RegExp global by default
 set magic               " Enable extended regexes.
 
 set spelllang=en_us
-"set spell               " Enable spellchecking
+"set spell              " Enable spellchecking
 
 
 " --- history / file handling ---
-set history=999             " Increase history (default = 20)
-set undolevels=999          " Moar undo (default=100)
-set autoread                " reload files if changed externally
+set history=999         " Increase history (default = 20)
+set undolevels=999      " Moar undo (default=100)
+set autoread            " reload files if changed externally
 
 
 " copy and paste
