@@ -313,11 +313,12 @@ case ${TERM} in
         PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
 
         # Set title of current xterm:
-        PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
+        PS1=${PS1}"\[\e]0;[\u@\h] \W\a\]"
         ;;
     *)
         PS1="(\A \u@\h \W) > " # --> PS1="(\A \u@\h \w) > "
-                               # --> Shows full pathname of current dir.
+                               # --> Shows full pathname of current dir. (\w)
+                               # --> Shows short pathname of current dir. (\W)
         ;;
 esac
 
@@ -375,7 +376,8 @@ alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 alias ll='ls -l'
 alias la='ls -A'
-alias llh='ls -lh'
+alias lh='ls -lh'
+alias l='ls'
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias ll="ls -lv --group-directories-first"
