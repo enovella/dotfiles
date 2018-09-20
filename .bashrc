@@ -291,6 +291,12 @@ function job_color()
     fi
 }
 
+# Add git branch information
+function parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+
 # Adds some text in the terminal frame (if applicable).
 
 
