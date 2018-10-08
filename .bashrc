@@ -560,6 +560,7 @@ function extract()      # Handy Extract Program
             *.zip)       unzip $1        ;;
             *.Z)         uncompress $1   ;;
             *.7z)        7z x $1         ;;
+            *.xz)        unxz $1         ;;
             *.apk)       unzip $1 -d $1.unpack ;;
             *)           echo "'$1' cannot be extracted via >extract<" ;;
         esac
