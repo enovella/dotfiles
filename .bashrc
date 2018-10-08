@@ -3,8 +3,9 @@
 #
 # PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
 # By Emmanuel Rouat [no-email]
+# Improved by Eduardo Novella 2017-2018
 #
-# Last modified: Tue Nov 20 22:04:47 CET 2012
+# Last modified: Mon  8 Oct 16:07:12 BST 2018
 
 #  This file is normally read by interactive shells only.
 #+ Here is the place to define your aliases, functions and
@@ -319,7 +320,7 @@ case ${TERM} in
         PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
 
         # Set title of current xterm:
-        PS1=${PS1}"\[\e]0;[\u@\h] \W\a\]"
+        PS1=${PS1}"\[\e]0;[\u@\h] \W\a\] "
         ;;
     *)
         PS1="(\A \u@\h \W) > " # --> PS1="(\A \u@\h \w) > "
@@ -487,6 +488,11 @@ function firefox() { command firefox "$@" & }
 function xpdf() { command xpdf "$@" & }
 
 
+function git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+
 #-------------------------------------------------------------
 # File & strings related functions:
 #-------------------------------------------------------------
@@ -497,6 +503,7 @@ function ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 
 # Find a file with pattern $1 in name and Execute $2 on it:
 function fe() { find . -type f -iname '*'"${1:-}"'*' \
+
 -exec ${2:-file} {} \;  ; }
 
 #  Find a pattern in a set of files and highlight them:
@@ -567,6 +574,12 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
+
+# Create an encrypted ZIP archive of a file or folder. Order: 1) dst 2) src 3) passw
+function makeseczip() { zip -r "${1%%/}-encrypted.zip" "$1" -P "$2"; }
+
+# Create an encrypted 7z file or folder. Order: 1) dst 2) src 3) passw
+function makesec7z() { 7z a "${1%%/}-encrypted.7z" "$1" -p"$2"; }
 
 # Make your directories and files access rights sane.
 function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
@@ -947,9 +960,7 @@ _killall()
 complete -F _killall killall killps
 
 
-
 # Local Variables:
 # mode:shell-script
 # sh-shell:bash
 # End:
-
