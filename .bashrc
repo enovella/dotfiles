@@ -1,4 +1,3 @@
-
 # =============================================================== #
 #
 # PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
@@ -96,7 +95,7 @@ alias debug="set -o nounset; set -o xtrace"
 
 ulimit -S -c 0      # Don't want coredumps.
 set -o notify
-set -o noclobber
+#set -o noclobber
 set -o ignoreeof
 
 
@@ -549,19 +548,20 @@ function extract()      # Handy Extract Program
 {
     if [ -f $1 ] ; then
         case $1 in
-            *.tar.bz2)   tar xvjf $1     ;;
-            *.tar.gz)    tar xvzf $1     ;;
-            *.bz2)       bunzip2 $1      ;;
-            *.rar)       unrar x $1      ;;
-            *.gz)        gunzip $1       ;;
-            *.tar)       tar xvf $1      ;;
-            *.tbz2)      tar xvjf $1     ;;
-            *.tgz)       tar xvzf $1     ;;
-            *.zip)       unzip $1        ;;
-            *.Z)         uncompress $1   ;;
-            *.7z)        7z x $1         ;;
-            *.xz)        unxz $1         ;;
+            *.tar.bz2)   tar xvjf $1           ;;
+            *.tar.gz)    tar xvzf $1           ;;
+            *.bz2)       bunzip2 $1            ;;
+            *.rar)       unrar x $1            ;;
+            *.gz)        gunzip $1             ;;
+            *.tar)       tar xvf $1            ;;
+            *.tbz2)      tar xvjf $1           ;;
+            *.tgz)       tar xvzf $1           ;;
+            *.zip)       unzip $1              ;;
+            *.Z)         uncompress $1         ;;
+            *.7z)        7z x $1               ;;
+            *.xz)        unxz $1               ;;
             *.apk)       unzip $1 -d $1.unpack ;;
+            *.ipa)       unzip $1 -d $1.unpack ;;
             *)           echo "'$1' cannot be extracted via >extract<" ;;
         esac
     else
