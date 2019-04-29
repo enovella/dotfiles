@@ -12,5 +12,5 @@ e asm.pseudo = true
 e scr.utf8 = true
 
 # Highlight matches for internal grep "~"
-e scr.highlight.grep true
+e scr.highlight.grep = true
 
