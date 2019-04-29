@@ -960,6 +960,8 @@ _killall()
 
 complete -F _killall killall killps
 
+# Generate random passwords as a password manager (pwman)
+pwman(){ < /dev/urandom tr -dc \#\!_A-Z-a-z-0-9 | head -c${1:-$1};echo;}
 
 # Local Variables:
 # mode:shell-script
