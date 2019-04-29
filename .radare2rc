@@ -1,5 +1,3 @@
-$dec=#!pipe node /home/edu/.local/share/radare2/r2pm/git/r2retdec/r2retdec.js
-
 # Show comments at right of disassembly if they fit in screen
 e asm.cmt.right=true
 e asm.describe=true
