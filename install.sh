@@ -5,6 +5,8 @@ sudo apt install git terminator -y
 
 git config --global user.name "Eduardo Novella"
 git config --global user.email ednolo@inf.upv.es
+git config --global credential.helper cache
+
 
 function do_backups() {
 	sudo cp /etc/vim/vimrc /etc/vim/vimrc.bak
