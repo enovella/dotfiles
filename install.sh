@@ -1,7 +1,7 @@
 
 sudo apt install fortune -y
 sudo apt install git terminator -y
-sudo apt install vim termux -y
+sudo apt install vim -y
 
 git config --global user.name "Eduardo Novella"
 git config --global user.email enovella@nowsecure.com
@@ -17,7 +17,7 @@ function do_backups() {
 function do_updates() {
 	sudo cp vimrc /etc/vim/vimrc
 	cp .bashrc ~/.bashrc
-	cp -rf .config ~/.config
+	cp -rf .config/* ~/.config/
 	cp .* ~/
 }
 
