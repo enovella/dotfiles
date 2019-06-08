@@ -18,6 +18,7 @@ function do_updates() {
 	sudo cp vimrc /etc/vim/vimrc
 	cp .bashrc ~/.bashrc
 	cp -rf .config/* ~/.config/
+	cp idapro/*.cfg ~/ida-7*/cfg/
 	cp .* ~/
 }
 
