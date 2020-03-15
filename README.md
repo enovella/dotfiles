@@ -9,3 +9,9 @@
 * vlcrc
 
 * .radare2rc
+
+* vscode
+
+* idapro7
+
+* terminator
