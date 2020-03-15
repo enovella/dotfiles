@@ -1,7 +1,7 @@
 
 sudo apt install fortune -y
 sudo apt install git terminator -y
-sudo apt install vim -y
+sudo apt install vim code -y
 
 git config --global user.name "Eduardo Novella"
 git config --global user.email enovella@nowsecure.com
@@ -18,6 +18,7 @@ function do_updates() {
 	sudo cp vimrc /etc/vim/vimrc
 	cp .bashrc ~/.bashrc
 	cp -rf .config/* ~/.config/
+	cat extensions.list | xargs -L 1 code --install-extension
 	cp idapro/*.cfg ~/ida-7*/cfg/
 	cp .* ~/
 }
