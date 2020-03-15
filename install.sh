@@ -18,7 +18,7 @@ function do_updates() {
 	sudo cp vimrc /etc/vim/vimrc
 	cp .bashrc ~/.bashrc
 	cp -rf .config/* ~/.config/
-	cat extensions.list | xargs -L 1 code --install-extension
+	cat .vscode/extensions.list | xargs -L 1 code --install-extension
 	cp idapro/*.cfg ~/ida-7*/cfg/
 	cp .* ~/
 }
