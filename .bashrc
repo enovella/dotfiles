@@ -316,7 +316,7 @@ case ${TERM} in
         PS1=${PS1}"\[\$(disk_color)\]\W]\[${NC}\] "
 
         # Prompt (with 'job' info):
-        PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
+        PS1=${PS1}"\[\$(job_color)\]\[\e[91m\]\$(parse_git_branch)\[\e[00m\]>\[${NC}\] "
 
         # Set title of current xterm:
         PS1=${PS1}"\[\e]0;[\u@\h] \W\a\] "
