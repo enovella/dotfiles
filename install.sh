@@ -1,6 +1,6 @@
 
 sudo apt install fortune -y
-sudo apt install git terminator -y
+sudo apt install git terminator colordiff -y
 sudo apt install vim code -y
 
 git config --global user.name "Eduardo Novella"
