@@ -1,4 +1,6 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
   title_transmit_bg_color = "#da13ca"
 [keybindings]
 [layouts]
@@ -13,9 +15,10 @@
 [profiles]
   [[default]]
     background_darkness = 0.89
-    background_image = None
     background_type = transparent
+    copy_on_selection = True
     cursor_color = "#fef928"
-    font = Ubuntu Mono 12
+    cursor_color_fg = False
+    font = Ubuntu Mono 18
     scrollback_infinite = True
     use_system_font = False

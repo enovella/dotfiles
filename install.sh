@@ -3,6 +3,7 @@ sudo apt install fortune -y
 sudo apt install git terminator colordiff -y
 sudo apt install vim code -y
 
+
 git config --global user.name "Eduardo Novella"
 git config --global user.email enovella@nowsecure.com
 git config --global credential.helper cache
@@ -23,7 +24,13 @@ function do_updates() {
 	cp .* ~/
 }
 
+function install_from_src() {
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install --all
+}
+
 do_backups
 do_updates
+install_from_src
 
 exit 0
